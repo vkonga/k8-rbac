@@ -50,3 +50,14 @@ roleRef:
   kind: Role
   name: amazon-lead
   apiGroup: rbac.authorization.k8s.io
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: amazon-cluster-role
+rules:
+  - apiGroups: [""] # "" indicates the core API group by default it is v1
+    resources: ["crontabs"]  # nouns
+    verbs: ["*"]  # verbs
+

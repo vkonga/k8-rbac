@@ -18,8 +18,8 @@ metadata:
 subjects:
   - kind: User
     name: suresh
-    apiGroups: rbac.authorization.k8s.io
+    apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: Role
   name: amazon-trainee
-  apiGroups: rbac.authorization.k8s.io
+  apiGroup: rbac.authorization.k8s.io

@@ -11,9 +11,25 @@ rules:
 ---
 
 apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: amazon
+  name: amazon-junior
+rules:
+  - apiGroups: [""] # "" indicates the core API group by default it is v1
+    resources: ["pods"]  # nouns
+    verbs: ["get", "watch", "list"]  # verbs
+
+  - apiGroups: ["apps"] # "" indicates the core API group by default it is v1
+    resources: ["deployments"]  # nouns
+    verbs: ["get", "watch", "list","create","update","patch","delete"]  # verbs
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: amazon-trainee
+  name: suresh
   namespace: amazon
 subjects:
   - kind: User
@@ -21,5 +37,5 @@ subjects:
     apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: Role
-  name: amazon-trainee
+  name: amazon-junior
   apiGroup: rbac.authorization.k8s.io

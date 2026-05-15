@@ -4,7 +4,7 @@ metadata:
   namespace: amazon
   name: amazon-trainee
 rules:
-  - apiGroup: [""] # "" indicates the core API group by default it is v1
+  - apiGroups: [""] # "" indicates the core API group by default it is v1
     resources: ["pods"]  # nouns
     verbs: ["get", "watch", "list"]  # verbs
 
@@ -18,8 +18,8 @@ metadata:
 subjects:
   - kind: User
     name: suresh
-    apiGroup: rbac.authorization.k8s.io
+    apiGroups: rbac.authorization.k8s.io
 roleRef:
   kind: Role
   name: amazon-trainee
-  apiGroup: rbac.authorization.k8s.io
+  apiGroups: rbac.authorization.k8s.io

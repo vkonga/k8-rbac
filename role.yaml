@@ -58,6 +58,6 @@ metadata:
   name: amazon-cluster-role
 rules:
   - apiGroups: [""] # "" indicates the core API group by default it is v1
-    resources: ["crontabs"]  # nouns
+    resources: ["persistantvolumes"]  # nouns
     verbs: ["*"]  # verbs
 
